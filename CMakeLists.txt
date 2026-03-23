@@ -3,4 +3,6 @@ project(MultiFileIDE)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(MultiFileIDE main.cpp)
+add_executable(MultiFileIDE main.cpp
+        Page.cpp
+        Book.cpp)

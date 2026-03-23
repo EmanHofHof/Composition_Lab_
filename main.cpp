@@ -1,77 +1,12 @@
+//Name: Ethan Hofsteen
+//Date: 3/23/26
+//Class: MSCI-272
+//Purpose: Test the newly organized program
 #include <iostream>
 #include <string>
 
-// The following classes are declared inline for students to refactor
-// into separate header and implementation files.
-
-class Page {
-public:
-    Page() : pageNumber(0), content("Empty Page") {}
-    Page(int num, const std::string& text) : pageNumber(num), content(text) {}
-
-    void setPageNumber(int num) {
-        pageNumber = num;
-    }
-
-    int getPageNumber() const {
-        return pageNumber;
-    }
-
-    void setContent(const std::string& text) {
-        content = text;
-    }
-
-    std::string getContent() const {
-        return content;
-    }
-
-private:
-    int pageNumber;
-    std::string content;
-};
-
-class Book {
-public:
-    Book() : title("Untitled"), author("Unknown") {}
-    Book(const std::string& t, const std::string& a) : title(t), author(a) {}
-
-    void setTitle(const std::string& t) {
-        title = t;
-    }
-
-    std::string getTitle() const {
-        return title;
-    }
-
-    void setAuthor(const std::string& a) {
-        author = a;
-    }
-
-    std::string getAuthor() const {
-        return author;
-    }
-
-    // Aggregation: Book contains a Page
-    void setPageDetails(int pageNum, const std::string& pageContent) {
-        currentPage.setPageNumber(pageNum);
-        currentPage.setContent(pageContent);
-    }
-
-    int getCurrentPageNumber() const {
-        return currentPage.getPageNumber();
-    }
-
-    std::string getCurrentPageContent() const {
-        return currentPage.getContent();
-    }
-
-private:
-    std::string title;
-    std::string author;
-    Page currentPage; // Aggregation
-};
-
-
+#include "Book.h"
+#include "Page.h"
 int main() {
     std::cout << "--- Original Inline Class Example ---" << std::endl;
 
